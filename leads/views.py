@@ -15,14 +15,14 @@ class LeadDetailView(DetailView):
 # (Read) Показывает детальную информацию о лиде из таблицы
     model = Lead
     template_name = 'leads/lead_detail.html'
-    context_object_name = 'leads'
+    context_object_name = 'lead'
 
 class LeadCreateView(CreateView):
     # (Create) Создает нового лида
     model = Lead
     template_name = 'leads/lead_form.html'
     fields = ['fisrt_name', 'last_name', 'email', 'phone', 'status']
-    success_url = reverse_lazy('lead_list')
+    success_url = reverse_lazy('lead-list')
 
 
 class LeadUpdateView(UpdateView):
@@ -30,13 +30,13 @@ class LeadUpdateView(UpdateView):
     model = Lead
     template_name = 'leads/lead_form.html'
     fields = ['fisrt_name', 'last_name', 'email', 'phone', 'status']
-    success_url = reverse_lazy('lead_list')
+    success_url = reverse_lazy('lead-list')
 
 class LeadDeleteView(DeleteView):
 # Delete Удаляет существующего лида
     model = Lead
     template_name = 'leads/lead_delete.html'
-    success_url = reverse_lazy('lead_list')
+    success_url = reverse_lazy('lead-list')
 
 
 
@@ -44,31 +44,31 @@ class LeadDeleteView(DeleteView):
 class ClientListView(ListView): 
 # READ Показывает список всех клиентов из таблицы
     model = Client
-    template_name = 'client/client_list.html'
+    template_name = 'clients/client_list.html'
     context_object_name = 'clients'
 
 class ClientDetailView(DetailView): #Конкретный клиент
 # READ Показывает детальную информацию о каждом клиенте
     model = Client
-    template_name = 'client/client_detail.html'
-    context_object_name = 'clients'
+    template_name = 'clients/client_detail.html'
+    context_object_name = 'client'
 
 class ClientCreateView(CreateView): 
 # Create создает нового клиента
     model = Client
     template_name = 'clients/client_form.html'
     fields = ['fisrt_name','last_name','email','phone', 'company_name']
-    success_url = reverse_lazy('client_list')
+    success_url = reverse_lazy('client-list')
 
 class ClientUpdateView(UpdateView):
 # Update - Обновляет сществующего клиента
     model  = Client
     template_name = 'client/client_form.html'
     fields = ['fisrt_name','last_name','email','phone', 'company_name']
-    success_url = reverse_lazy('client_list')
+    success_url = reverse_lazy('client-list')
 
 class ClientDeleteView(DeleteView):
 # Delete Удаляет существующего клиента
     model = Client
-    template_name = 'client/client_delete.html'
-    success_url = reverse_lazy('client_list')
+    template_name = 'clients/client_delete.html'
+    success_url = reverse_lazy('client-list')

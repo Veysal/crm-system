@@ -3,17 +3,16 @@
 {% block title %}Клиент: {% endblock %}
 
 {% block content %}
-    <h1>{{ client.first_name }}</h1>
-    <p><strong>Компания:</strong></p>
-    <p><strong>Email:</strong> </p>
-    <p><strong>Телефон:</strong></p>
-    <p><strong>Дата добавления:</strong> </p>
+    <h1>{{ client.fisrt_name }} {{ client.last_name }}</h1>
+    <p><strong>Компания:</strong>{{ client.company_name|default:"Неизвестно" }}</p>
+    <p><strong>Email:</strong>{{ client.email }}</p>
+    <p><strong>Телефон:</strong>{{ client.phone|default:"Неизвестно" }}</p>
+    <p><strong>Дата добавления:</strong>{{ client.created_at|date:"d.m.Y H:i" }}</p>
     <hr>
-    <a href="" class="btn">Редактировать</a>
-    <a href="" class="btn btn-danger">Удалить</a>
-    
+    <a href="{{ url 'client-update' client.pk }}" class="btn">Редактировать</a>
+    <a href="{{ url 'client-delete' client.pk }}" class="btn btn-danger">Удалить</a>
+    <br>
 
-
-    <a href="">← Назад к списку клиентов</a>
+    <a href="{{ url 'client-list'}}">← Назад к списку клиентов</a>
 {% endblock %}
  
