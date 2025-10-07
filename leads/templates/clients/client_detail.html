@@ -1,0 +1,19 @@
+{% extends 'leads/base.html' %}
+
+{% block title %}Клиент: {% endblock %}
+
+{% block content %}
+    <h1>{{ client.first_name }}</h1>
+    <p><strong>Компания:</strong></p>
+    <p><strong>Email:</strong> </p>
+    <p><strong>Телефон:</strong></p>
+    <p><strong>Дата добавления:</strong> </p>
+    <hr>
+    <a href="" class="btn">Редактировать</a>
+    <a href="" class="btn btn-danger">Удалить</a>
+    
+
+
+    <a href="">← Назад к списку клиентов</a>
+{% endblock %}
+ 

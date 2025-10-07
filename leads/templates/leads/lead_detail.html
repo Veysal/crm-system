@@ -1,0 +1,22 @@
+{% extends 'leads/base.html' %}
+
+{% block title %}Лид: {{ lead.first_name }} {{ lead.last_name }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-header">
+            <h1>{{ lead.first_name }} {{ lead.last_name }}</h1>
+        </div>
+        <div class="card-body">
+            <p><strong>Email:</strong>{{ lead.email }}</p>
+            <p><strong>Телефон:</strong>{{ lead.phone }}</p>
+            <p><strong>Статус:</strong><span class="badge bg-info">{{ lead.status }}</span></p>
+            <p><strong>Дата создания:</strong>{{ lead.created_at|date:"d.m.Y H:i" }}</p>
+        </div>
+        <div class="card-footer">
+            <a href="{% url 'lead-update' lead.pk %}" class="btn btn-primary">Редактировать</a>
+            <a href="{% url 'lead-delete' lead.pk %}" class="btn btn-danger">Удалить</a>
+            <a href="{% url 'lead-list' %}" class="btn btn-secondary">Назад к списку</a>
+        </div>
+    </div>
+{% endblock %}
