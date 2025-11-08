@@ -5,6 +5,7 @@ from .views import(
     LeadCreateView,
     LeadUpdateView,
     LeadDeleteView,
+    LeadConvertView,
     ClientListView,
     ClientDetailView,
     ClientCreateView,
@@ -19,6 +20,7 @@ urlpatterns = [
     path('lead/add/', LeadCreateView.as_view(), name = 'lead-create'),
     path('lead/<int:pk>/edit/', LeadUpdateView.as_view(), name = 'lead-update'),
     path('lead/<int:pk>/delete/', LeadDeleteView.as_view(), name = 'lead-delete'),
+    path('lead/<int:pk>/convert/', LeadConvertView.as_view(), name='lead-convert'),
     # URLs для клиентов
     path('clients/',ClientListView.as_view(),name='client-list'),
     path('client/<int:pk>/',ClientDetailView.as_view(),name='client-detail'),

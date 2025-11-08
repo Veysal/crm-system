@@ -127,3 +127,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Настройки для Crispy forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'lead-list'
+LOGOT_REDIRECT_URL = 'login'
+
+# Длительность сессии - 1 неделя
+SESSION_COOKIE_AGE = 604800
+#Сессия очищается при закрытии браузер(нет)
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False

@@ -1,0 +1,64 @@
+{% extends 'leads/base.html' %}
+
+{% block title %}Вход в систему{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card shadow-lg" style="width: 100%; max-width: 400px;">
+        <div class="card-body p-5">
+            <h1 class="card-title text-center mb-4">Вход в My CRM</h1>
+            
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Ошибка входа!</strong>
+                        <p></p>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            
+            <form method="post" novalidate>
+                <div class="mb-3">
+                    <label for="" class="form-label">
+                        Имя пользователя
+                    </label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id=""
+                        name="username" 
+                        placeholder="Введите имя пользователя"
+                        required
+                    >
+                        <div class="invalid-feedback d-block">
+
+                        </div>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="" class="form-label">
+                        Пароль
+                    </label>
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id=""
+                        name="password" 
+                        placeholder="Введите пароль"
+                        required
+                    >
+                        <div class="invalid-feedback d-block">
+  
+                        </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100 mb-3">Войти</button>
+            </form>
+            
+            <div class="text-center">
+                <p class="text-muted mb-0">
+                    Нет аккаунта? 
+                    <a href="" class="text-decoration-none">Зарегистрируйтесь</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
